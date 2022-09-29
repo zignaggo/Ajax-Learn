@@ -34,7 +34,9 @@
             return response.json()
         }).then( (response) => {
             alert("Cadastro Feito com sucesso!")
-        })
+        }) .catch( (error) => {
+        console.log('deu erro tá: ', error.message )
+    })
     })
 </script>
 </html>
