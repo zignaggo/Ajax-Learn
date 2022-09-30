@@ -47,6 +47,9 @@ Ao enviar algo para o servidor devemos informar o usuário se foi bem sucedido o
 fetch('https://reqres.in/api/users' , {
     method: 'POST',
     body: JSON.stringify(dados)
+    headers: {
+        "Content-type" : "application/json"
+    }
 }).then( (response) => {
     console.log(response)
 })
@@ -72,6 +75,20 @@ fetch('https://reqres.in/api/users')
         console.log('deu erro tá: ', err )
     })
 ```
+#### Executar vários Requests
+```javascript
+    const getManyRequests = async () => {
+        const [requestOne, requestTwo] = await Promisse.all([
+            fetch('url'),
+            fetch('url2')
+        ])
+
+        const dataRequestOne = await requestOne.json()
+        const dataRequestTwo = await requestTwo.json()
+
+    }
+```
+
 
 
 ## Protocolo HTTP  
